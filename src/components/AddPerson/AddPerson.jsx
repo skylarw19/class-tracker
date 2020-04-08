@@ -5,7 +5,15 @@ class AddPerson extends Component {
         teacherName: "" 
     }
     render() { 
-        return (  );
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <input 
+                    name="name"
+                    required
+                />
+                <button type="submit">Submit</button>
+            </form>
+        );
     }
 }
  
