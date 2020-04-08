@@ -9,6 +9,13 @@ class App extends Component {
     teachers: ["Ben", "Linnae", "Jim"],
     students: ["Sky", "Crys", "Bran", "Jan"]
   }
+
+  handleAdd = (name, role) => {
+    this.setState({
+        [role]: [...this.state[role], name]
+    });
+  }
+
   render() { 
     return ( 
       <div className="App">
@@ -24,10 +31,14 @@ class App extends Component {
             <Welcome />
           }  />
           <Route exact path="/teachers" render={() =>
-            <Teachers teachers={this.state.teachers} />
+            <Teachers 
+              teachers={this.state.teachers}
+              handleAdd={this.handleAdd} />
           } />
           <Route exact path="/students" render={() =>
-            <Students students={this.state.students} />
+            <Students 
+              students={this.state.students} 
+              handleAdd={this.handleAdd}/>
           } />
         </main>
       </div>

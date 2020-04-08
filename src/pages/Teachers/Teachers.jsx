@@ -1,7 +1,8 @@
 import React from 'react';
 import Teacher from '../../components/Teacher/Teacher';
+import AddPerson from '../../components/AddPerson/AddPerson';
 
-const Teachers = ({teachers}) => {
+const Teachers = ({teachers, handleAdd}) => {
     return (
         <>
         <h1>Teachers </h1>
@@ -10,7 +11,11 @@ const Teachers = ({teachers}) => {
                 key={teacher}
                 name={teacher}
             />
+            
         ) }
+        <AddPerson 
+            handleAdd={handleAdd}
+            role={"teachers"}/>
         </>
     );
 }

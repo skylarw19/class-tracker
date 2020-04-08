@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class AddPerson extends Component {
     state = { 
-        teacherName: "",
+        name: "",
     }
 
     handleChange = e => {
@@ -13,14 +13,14 @@ class AddPerson extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.handleAdd(this.state.teacherName, role);  {/*handleAdd is writen on app.js so need to pass handleAdd as a prop */}
+        this.props.handleAdd(this.state.name, this.props.role);  {/*handleAdd is writen on app.js so need to pass handleAdd as a prop */}
     }
 
     render() { 
         return (
             <form onSubmit={this.handleSubmit}>
                 <input 
-                    name="teacherName"
+                    name="name"
                     required
                     onChange={this.handleChange}
                 />
